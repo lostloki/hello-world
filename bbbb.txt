@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Edited
+=======
+putang ina mo
+>>>>>>> origin/CCCCCcccccc
