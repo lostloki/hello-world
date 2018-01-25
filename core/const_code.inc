@@ -1,0 +1,259 @@
+<?php
+// 定数などの定義
+//------------------------------------------------------------------
+define('DISP_CASE', 20); // 1ページあたりの表示件数.
+define('DELETE_FLG_OFF', 0); // 削除フラグOFF.
+define('DELETE_FLG_ON', 1); // 削除フラグON.
+define('HANYOU_ID', 1); // タブレットアプリVersion ID
+define('HANYOU_SUB_ID', 1); // タブレットアプリVersion SubID
+define('RIYOU_FLG_OFF', 0); // 利用可能フラグOFF.
+
+//名称などの定義
+//------------------------------------------------------------------
+// システム名
+define('SYSTEM_NAME','自動配車システム');
+
+//コピーライト
+define('COPYRIGHT','Best Group.');
+
+//メニュー
+//------------------------------------------------------------------
+
+// 通常業務
+define('MENU_WORK','通常業務');
+define('MENU_PICKUP','迎車依頼');
+define('MENU_HISTORY','迎車履歴');
+define('MENU_MSG_DRIVER','お知らせ管理<br>(乗務員向け)');
+define('MENU_MSG_DRIVER_NOT_MENU','お知らせ管理(乗務員向け)');
+define('MENU_MSG_CLIENT','お知らせ管理<br>(顧客向け)');
+define('MENU_MSG_CLIENT_NOT_MENU','お知らせ管理(顧客向け)');
+define('MENU_DRIVER_HYOUKA','乗務員評価管理');
+
+
+// システム全体の管理
+define('MENU_SYSTEM','システム全体の管理');
+define('MENU_OPERATOR','オペレータ管理');
+define('MENU_LOCATION','交通圏管理');
+define('MENU_RYOUKIN','料金体系管理');
+define('MENU_COMPANY','タクシー会社管理');
+define('MENU_CLIENT','顧客管理');
+define('MENU_ADDRESS','住所管理');
+define('MENU_APPVERSION','タブレットアプリVersion管理');
+
+define('MENU_LOCATION_SUB','交通圏詳細管理');
+
+// 会社単位の管理
+define('MENU_UNIT','会社単位の管理');
+define('MENU_OFFICE','営業所管理');
+define('MENU_CARTYPE','車両種別管理');
+define('MENU_CAR','車両管理');
+define('MENU_DRIVER','乗務員管理');
+define('MENU_TABLET','タブレット管理');
+
+// スマホアプリ画面
+define('MENU_CLIENT_MESSAGE', 'お知らせ一覧（顧客向け）');
+
+//const_menuから引越
+define('OEPRATOR_ADD',"新規登録");
+define('OEPRATOR_EDIT',"詳細");
+
+define('COMPANY_ADD',"新規登録");
+define('COMPANY_EDIT',"詳細");
+
+define('ADDRESS_ADD',"新規登録");
+define('ADDRESS_EDIT',"詳細");
+
+define('LOCATION_ADD',"新規登録");
+define('LOCATION_EDIT',"詳細");
+
+define('LOCATION_SUB_ADD',"新規登録");
+define('LOCATION_SUB_EDIT',"詳細");
+
+define('OFFICE_ADD',"新規登録");
+define('OFFICE_EDIT',"詳細");
+
+define('CAR_ADD',"新規登録");
+define('CAR_EDIT',"詳細");
+
+define('CAR_TYPE_ADD',"新規登録");
+define('CAR_TYPE_EDIT',"詳細");
+
+
+define('DRIVER_ADD',"新規登録");
+define('DRIVER_EDIT',"詳細");
+
+define('RYOUKIN_ADD',"新規登録");
+define('RYOUKIN_EDIT',"詳細");
+
+define('CLIENT_ADD',"新規登録");
+define('CLIENT_EDIT',"詳細");
+
+define('MESSAGE_TO_CLIENT_ADD',"新規登録");
+define('MESSAGE_TO_CLIENT_EDIT',"詳細");
+
+define('TABLET_ADD',"新規登録");
+define('TABLET_EDIT',"詳細");
+
+define('MESSAGE_TO_DRIVER_ADD',"新規登録");
+define('MESSAGE_TO_DRIVER_EDIT',"詳細");
+
+//----------------------------------------------
+// 前のページに戻る
+define('PAGE_BACK','<a href="javascript:history.back()">前のページに戻る</a>');
+
+// オペレータ権限
+define( 'OPERATOR_PERMISSION', array(1 => 'システム管理者', 2 => 'ベストグループ', 3 => '他社' ));
+
+// お知らせ重要度
+define( 'MSG_FLAG', array(1 => '重要', 2 => '緊急'));
+
+// 迎車ステータス
+define( 'PICKUP_STATUS', array(1 => '迎車完了', 2 => '配車中', 3 => '顧客キャンセル'));
+
+// 利用フラグ
+define( 'RIYOU_FLG', array(1 => '利用可能', 2 => 'ブラックリスト' ));
+
+// レジスタタイプ
+define( 'REGISTER_TYPE', array(1 => '電話', 2 => 'スマホ'));
+
+// セックス
+define( 'SEX', array(1 => '男性', 2 => '女性'));
+
+// スマホ区分
+define( 'PHONE_TYPE', array(1 => 'iOS', 2 => 'Android'));
+
+// アクセストークン
+define('ACC_TOKEN', "R4pMbFja");
+
+// ----- タブレットリクエストコード -----
+// 待機状態
+define('TAB_STAY', 0);
+// 迎車検討中
+define('TAB_CONSIDERATION', 10);
+// 迎車可能
+define('TAB_POSSIBLE', 11);
+// 迎車不可
+define('TAB_IMPOSSIBLE', 12);
+// 迎車中
+define('TAB_GOING', 20);
+// 現場到着
+define('TAB_ARRIVED', 21);
+// 迎車完了
+define('TAB_COMPLETE', 22);
+// 乗務員キャンセル
+define('TAB_CANCEL_DRIVER', 30);
+// 顧客キャンセル
+define('TAB_CANCEL_CLIENT', 31);
+
+// ----- 乗務員APIエラーコード -----
+// 正常終了
+define('RET_OK', 0);
+// 正常終了(タブレットは待機状態に戻る)
+define('RET_OK_RESET', 1);
+// タブレット認証エラー
+define('RET_ERR_ACCESS_TOKEN', -1);
+// パラメータ異常エラー
+define('RET_ERR_PARAM', -2);
+// タブレット利用不可
+define('RET_ERR_STOP', -3);
+// UUID不一致エラー
+define('RET_ERR_UUID', -4);
+// サーバー内エラー
+define('RET_ERR_SERVER', -5);
+
+// ----- 顧客APIエラーコード -----
+// 正常終了
+define('RET_CLIENT_OK', 0);
+// 顧客認証エラー
+define('RET_CLIENT_ERR_PIN', -1);
+// パラメータ異常エラー
+define('RET_CLIENT_ERR_PARAM', -2);
+// アプリ使用制限エラー
+define('RET_CLIENT_ERR_RIYOU', -3);
+// サーバー内エラー
+define('RET_CLIENT_ERR_SERVER', -4);
+
+// ----- 迎車ステータス -----
+// 車両選択
+define('STA_SELCT', 0);
+// 迎車依頼中
+define('STA_IRAI', 1);
+// 迎車中
+define('STA_GOING', 2);
+// 現場到着
+define('STA_ARRIVED', 3);
+// 迎車完了
+define('STA_COMPLETE', 4);
+// 乗務員キャンセル
+define('STA_CANCEL_DRIVER', -1);
+// 顧客キャンセル
+define('STA_CANCEL_CLIENT', -2);
+
+// ----- 迎車ステータス名 -----
+// 車両選択
+define('STA_SELECT_NAME', '車両選択');
+// 車両依頼中
+define('STA_IRAI_NAME', '車両依頼中');
+// 迎車中
+define('STA_GOING_NAME', '迎車中');
+// 現場到着
+define('STA_ARRIVED_NAME', '現場到着');
+// 迎車完了
+define('STA_COMPLETE_NAME', '迎車完了');
+// 乗務員キャンセル
+define('STA_CANCEL_DRIVER_NAME', '乗務員キャンセル');
+// 顧客キャンセル
+define('STA_CANCEL_CLIENT_NAME', '顧客キャンセル');
+
+// ----- オペレータ権限 -----
+// システム管理者
+define('PERMISSION_SYSTEM', '1');
+// ベストグループ
+define('PERMISSION_BEST', '2');
+// 他社
+define('PERMISSION_OTHER', '3');
+
+// ----- 依頼元区分 -----
+// センター
+define('REQUEST_TYPE_CENTER', '1');
+// スマホ
+define('REQUEST_TYPE_PHONE', '2');
+
+// ----- 迎車依頼画面フラグ -----
+// キャンセル
+define('FLG_CANCEL', 'cancel');
+// 車両選択
+define('FLG_SELECT', 'select');
+
+// ----- 削除フラグ -----
+// 有効
+define('DELETE_FLG_ACTIVE', '0');
+// 削除
+define('DELETE_FLG_DELETE', '1');
+
+// ----- 利用フラグ -----
+// ブラックリスト
+define('RIYOU_FLG_NG', '0');
+// 利用可能
+define('RIYOU_FLG_OK', '1');
+
+// ----- 詳細情報リクエスト -----
+// ステータスID、タクシーとの距離のみ
+define('DETAIL_FLG_OFF', '0');
+// 詳細含む迎車情報
+define('DETAIL_FLG_ON', '1');
+
+// ----- Insert Tablet Riyou ----- TODOEXC
+// Driver_id = 0
+define('DRIVER_ID_RIYOU', '0');
+// Car_id = 0
+define('CAR_ID_RIYOU', '0');
+
+// ----- Google Maps APIキー -----
+define('GOOGLE_MAPS_API_KEY', 'AIzaSyDR_83WZHIP1slvQsMEjNXUIW4gDuHajQI');
+
+//----------------------------------------------
+// 都道府県コード表
+define( 'TODOHUKEN_LIST', array(1 => '北海道', 2 => '青森県', 3 => '岩手県', 4 => '宮城県', 5 => '秋田県', 6 => '山形県', 7 => '福島県', 8 => '茨城県', 9 => '栃木県', 10 => '群馬県', 11 => '埼玉県', 12 => '千葉県', 13 => '東京都', 14 => '神奈川県', 15 => '新潟県', 16 => '富山県', 17 => '石川県', 18 => '福井県', 19 => '山梨県', 20 => '長野県', 21 => '岐阜県', 22 => '静岡県', 23 => '愛知県', 24 => '三重県', 25 => '滋賀県', 26 => '京都府', 27 => '大阪府', 28 => '兵庫県', 29 => '奈良県', 30 => '和歌山県', 31 => '鳥取県', 32 => '島根県', 33 => '岡山県', 34 => '広島県', 35 => '山口県', 36 => '徳島県', 37 => '香川県', 38 => '愛媛県', 39 => '高知県', 40 => '福岡県', 41 => '佐賀県', 42 => '長崎県', 43 => '熊本県', 44 => '大分県', 45 => '宮崎県', 46 => '鹿児島県', 47 => '沖縄県' ));
+
+?>
