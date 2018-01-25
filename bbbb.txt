@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 Edited
 =======
 putang ina mo
@@ -12,4 +13,7 @@ putang ina mo
 putang ina mo
 >>>>>>> origin/CCCCCcccccc
 putang ina mo
+>>>>>>> origin/CCCCCcccccc
+=======
+putang ina mo ohohohoh
 >>>>>>> origin/CCCCCcccccc
