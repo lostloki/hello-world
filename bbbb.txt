@@ -16,4 +16,8 @@ putang ina mo
 >>>>>>> origin/CCCCCcccccc
 =======
 putang ina mo ohohohoh
+<<<<<<< HEAD
 >>>>>>> CCCCCcccccc
+=======
+>>>>>>> origin/CCCCCcccccc
+>>>>>>> f53f7eb59775088571b334daf297935951372d52
